@@ -4,7 +4,7 @@ function HogInfo ({specialty, greased, weight, medal}) {
 
     console.log({specialty, greased, weight, medal})
     return (
-        <div>
+        <div className="description">
            <p>Specialty: {specialty}</p>
            <p>{greased ? "Greased" : "Not Greased"}</p>
            <p>Weight: {weight}</p>

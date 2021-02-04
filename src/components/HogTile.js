@@ -16,17 +16,21 @@ function HogTile({name, image, specialty, weight, medal, greased}) {
 
     return (
         <div onClick={handleClick} className="ui eight wide column">
-            <h3>{name}</h3>
-            <button onClick={showClick}>{show ? "Hide Hog" : "Show Hog"}</button>
-            <div style={ show ? { display:'block'} : {display : 'none'} } >
-                <img src={image} alt={name} className="minPigTile maxPigTile" />;
-                    {isClicked ? 
-                        <HogInfo 
-                            specialty={specialty} 
-                            weight={weight} 
-                            greased={greased}
-                            medal={medal}
-                        /> : null }
+            <div className="ui card">
+                <button onClick={showClick}>{show ? "Hide Hog" : "Show Hog"}</button>
+                <h3 className="header">{name}</h3>
+                <div style={ show ? { display:'block'} : {display : 'none'} } >
+                     <div class="image">
+                        <img src={image} alt={name} className="minPigTile" />;
+                    </div>
+                        {isClicked ? 
+                            <HogInfo 
+                                specialty={specialty} 
+                                weight={weight} 
+                                greased={greased}
+                                medal={medal}
+                            /> : null }
+                </div>
             </div>
         </div>
     )
